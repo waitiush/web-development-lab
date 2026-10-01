@@ -1,37 +1,153 @@
 <!DOCTYPE html>
 <html lang="mn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мөнхтуул Тайванжаргал - Товч CV</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Бүртгэлийн анкет</title>
+  <style>
+    :root {
+      --bg: #f3f6f4;
+      --surface: #ffffff;
+      --ink: #1c2b26;
+      --muted: #5b6b65;
+      --line: #c9d5cf;
+      --accent: #1f6f5c;
+      --accent-ink: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, "Segoe UI", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header, footer { padding: 1.25rem 1.5rem; text-align: center; }
+    header h1 { margin: 0 0 .25rem; font-size: 1.75rem; }
+    header p { margin: 0; color: var(--muted); }
+    footer { color: var(--muted); font-size: .9rem; }
+    main { flex: 1; width: 100%; max-width: 560px; margin: 0 auto; padding: 0 1rem 1.5rem; }
+    form {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1.5rem;
+    }
+    fieldset { border: 0; padding: 0; margin: 0 0 1.5rem; }
+    legend { font-weight: 700; font-size: 1.1rem; padding: 0; margin-bottom: .75rem; }
+    .field { margin-bottom: 1rem; }
+    label { display: block; font-weight: 600; margin-bottom: .25rem; }
+    input[type="text"], input[type="email"], input[type="password"],
+    input[type="date"], select {
+      width: 100%;
+      padding: .6rem .7rem;
+      font: inherit;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+    }
+    .options { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+    .options label { font-weight: 400; display: inline-flex; align-items: center; gap: .4rem; margin: 0; }
+    .hint { color: var(--muted); font-size: .85rem; margin: .25rem 0 0; }
+    button {
+      font: inherit; font-weight: 600; cursor: pointer;
+      padding: .7rem 1.25rem; border-radius: 6px; border: 1px solid var(--accent);
+    }
+    button[type="submit"] { background: var(--accent); color: var(--accent-ink); }
+    button[type="reset"] { background: transparent; color: var(--accent); margin-left: .5rem; }
+    :focus-visible { outline: 3px solid #f2b705; outline-offset: 2px; }
+  </style>
 </head>
 <body>
 
-    <h1>Мөнхтуул Тайванжаргал</h1>
+  <header>
+    <h1>Бүртгэлийн анкет</h1>
+    <p>Доорх мэдээллийг бөглөж бүртгэлээ үүсгээрэй.</p>
+  </header>
 
-    <p>Сайн байна уу? Намайг Мөнхтуул овогтой Тайванжаргал гэдэг. Би 2006 оны 7-р сарын 3-ны өдөр Улаанбаатар хотод төрсөн. Одоогоор ШУТИС-ийн Өгөгдлийн ухааны ангийн 2-р курсийн оюутан байна. Би шинэ техник технологи болон өгөгдөлтэй ажиллах сонирхолтой бөгөөд ирээдүйд өөрийн ур чадвараараа технологийн салбарт хувь нэмэр оруулах зорилготой.</p>
+  <main>
+    <form action="#" method="post">
 
-    <h2>Боловсрол</h2>
-    <ul>
-        <li><strong>ШУТИС (Шинжлэх Ухаан Технологийн Их Сургууль)</strong> - Өгөгдлийн ухааны анги, 2-р курсийн оюутан (2024 онд элссэн)</li>
-        <li><strong>"Өнөр цогцолбор" сургууль</strong> - Бүрэн дунд боловсрол (2012 - 2024 онд төгссөн)</li>
-        <li>Улаанбаатар хотын цэцэрлэгт хүмүүжсэн суурь хүмүүжилтэй.</li>
-    </ul>
+      <fieldset>
+        <legend>Хувийн мэдээлэл</legend>
 
-    <h2>Миний Ур Чадварууд</h2>
-    <ul>
-        <li><strong>Судалгаа ба Анализ:</strong> Аливаа зүйлийг гүнзгийрүүлэн судлах, үр дүнг тайлбарлах, анализ хийх чадвартай.</li>
-        <li><strong>Бусдад заах арга барил:</strong> Өөрийн сурсан мэдлэгээ бусдад ойлгомжтойгоор тайлбарлаж, зааж сургахдаа сайн.</li>
-        <li><strong>Харилцааны чадвар:</strong> Багаар ажиллах, бусадтай хэлцэл хийх болон ойлголцох харилцааны өндөр соёлтой.</li>
-        <li><strong>Орчин үеийн технологийн мэдлэг:</strong> Өгөгдлийн ухаан болон өнөөгийн технологийн чиг хандлагын талаарх суурь мэдлэг, ур чадваруудыг эзэмшсэн.</li>
-    </ul>
+        <div class="field">
+          <label for="name">Нэр</label>
+          <input type="text" id="name" name="name" placeholder="Жишээ: Болд" required>
+        </div>
 
-    <h2>Холбоо барих</h2>
-    <p>Гар утас: 85226962</p>
-    <p>Цахим шуудан: taiwanaam3@gmail.com</p>
-    <p>Та миний хийж буй кодын сан болон бусад төслүүдтэй танилцахыг хүсвэл 
-        <a href="https://github.com" target="_blank">миний GitHub хуудсаар (waitiush)</a> зочлоорой.
-    </p>
+        <div class="field">
+          <label for="birthdate">Төрсөн огноо</label>
+          <input type="date" id="birthdate" name="birthdate" required>
+        </div>
+
+        <div class="field">
+          <span id="gender-label" style="font-weight:600;display:block;margin-bottom:.25rem;">Хүйс</span>
+          <div class="options" role="radiogroup" aria-labelledby="gender-label">
+            <label><input type="radio" name="gender" value="male" required> Эрэгтэй</label>
+            <label><input type="radio" name="gender" value="female"> Эмэгтэй</label>
+            <label><input type="radio" name="gender" value="other"> Бусад</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Нэвтрэх мэдээлэл</legend>
+
+        <div class="field">
+          <label for="email">Имэйл</label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" required>
+        </div>
+
+        <div class="field">
+          <label for="password">Нууц үг</label>
+          <input type="password" id="password" name="password" minlength="8" aria-describedby="pw-hint" required>
+          <p id="pw-hint" class="hint">Хамгийн багадаа 8 тэмдэгт.</p>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Сонирхол</legend>
+
+        <div class="field">
+          <label for="country">Оршин суугаа хот</label>
+          <select id="country" name="city">
+            <option value="">-- Сонгох --</option>
+            <option value="ulaanbaatar">Улаанбаатар</option>
+            <option value="darkhan">Дархан</option>
+            <option value="erdenet">Эрдэнэт</option>
+            <option value="other">Бусад</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <span id="interest-label" style="font-weight:600;display:block;margin-bottom:.25rem;">Сонирхол</span>
+          <div class="options" role="group" aria-labelledby="interest-label">
+            <label><input type="checkbox" name="interests" value="coding"> Програмчлал</label>
+            <label><input type="checkbox" name="interests" value="music"> Хөгжим</label>
+            <label><input type="checkbox" name="interests" value="sports"> Спорт</label>
+            <label><input type="checkbox" name="interests" value="travel"> Аялал</label>
+            <label><input type="checkbox" name="interests" value="reading"> Ном унших</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="field">
+        <label><input type="checkbox" name="terms" required> Үйлчилгээний нөхцөлийг зөвшөөрч байна</label>
+      </div>
+
+      <button type="submit">Бүртгүүлэх</button>
+      <button type="reset">Цэвэрлэх</button>
+
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Миний вэб сайт</p>
+  </footer>
 
 </body>
 </html>
