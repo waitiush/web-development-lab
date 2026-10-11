@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лаб 4 — Flexbox ба Grid Layout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="lab4-style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#" class="logo">T<span>Студио</span></a>
+      <ul class="nav-links">
+        <li><a href="#home">Нүүр</a></li>
+        <li><a href="#courses">Хичээлүүд</a></li>
+        <li><a href="#blog">Блог</a></li>
+        <li><a href="#about">Бидний тухай</a></li>
+        <li><a href="#contact">Холбоо барих</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="page-layout">
+
+    <aside class="sidebar">
+      <h2 class="sidebar-title">Ангилал</h2>
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="#">Веб хөгжүүлэлт</a></li>
+          <li><a href="#">Дизайн</a></li>
+          <li><a href="#">Дата шинжилгээ</a></li>
+          <li><a href="#">Хиймэл оюун ухаан</a></li>
+          <li><a href="#">Кибер аюулгүй байдал</a></li>
+        </ul>
+      </nav>
+
+      <h2 class="sidebar-title">Шошго</h2>
+      <div class="tag-list">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Grid</span>
+        <span class="tag">Flexbox</span>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <h1 class="page-title">Сүүлийн үеийн хичээлүүд</h1>
+      <p class="page-subtitle">Доорх карт бүрт нэг хичээлийн товч танилцуулга орсон. Энэ хэсэг CSS Grid-ээр олон баганатай зохион байгуулагдсан.</p>
+      <section class="card-grid">
+
+        <article class="card">
+          <div class="card-badge">Шинэ</div>
+          <h3>Семантик HTML5</h3>
+          <p>Хуудасны бүтцийг header, main, footer зэрэг семантик тагаар зохион байгуулах аргачлал.</p>
+          <a href="#" class="card-link">Үзэх &rarr;</a>
+        </article>
+
+        <article class="card">
+          <h3>CSS Flexbox</h3>
+          <p>Нэг чиглэлийн элементүүдийг уян хатан зэрэгцүүлэх, зэрэгцээ байрлуулах арга.</p>
+          <a href="#" class="card-link">Үзэх &rarr;</a>
+        </article>
+
+        <article class="card">
+          <h3>CSS Grid</h3>
+          <p>Хоёр хэмжээст (мөр, багана) байршилтай нарийн төвөгтэй layout зохиох систем.</p>
+          <a href="#" class="card-link">Үзэх &rarr;</a>
+        </article>
+
+        <article class="card">
+          <h3>Responsive Design</h3>
+          <p>Хэмжээ өөр дэлгэцэнд тохируулан хуудасны байршлыг уян хатан өөрчлөх арга.</p>
+          <a href="#" class="card-link">Үзэх &rarr;</a>
+        </article>
+
+        <article class="card">
+          <h3>JavaScript Үндэс</h3>
+          <p>DOM удирдах, үйл явдал боловсруулах, динамик агуулга үүсгэх анхан шатны ойлголтууд.</p>
+          <a href="#" class="card-link">Үзэх &rarr;</a>
+        </article>
+
+        <article class="card">
+          <h3>Git &amp; GitHub</h3>
+          <p>Хувилбар хяналт хийх, хамтран ажиллах, кодоо онлайнаар хадгалах үндсэн командууд.</p>
+          <a href="#" class="card-link">Үзэх &rarr;</a>
+        </article>
+
+      </section>
+    </main>
+
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 TСтудио. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </footer>
+
+</body>
+</html>
