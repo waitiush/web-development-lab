@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лаб 5 — Responsive хуудас</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="lab5-style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="navbar">
+      <a href="#" class="logo">Т<span>Студио</span></a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="hamburger" aria-label="Цэс нээх">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="#home">Нүүр</a></li>
+          <li><a href="#services">Үйлчилгээ</a></li>
+          <li><a href="#about">Бидний тухай</a></li>
+          <li><a href="#contact">Холбоо барих</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <h1>Responsive вэб хуудас хийх курс</h1>
+      <p>Mobile-First зарчмаар, Media Queries ашиглан гар утас, таблет, компьютер дээр тохирсон хуудас хэрхэн хийхийг сур.</p>
+      <a href="#services" class="btn">Эхлэх</a>
+    </section>
+    <section class="services" id="services">
+      <h2 class="section-title">Бидний үйлчилгээ</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Mobile-First дизайн</h3>
+          <p>Хамгийн жижиг дэлгэцнээс эхлээд том дэлгэц рүү тэлж загварчилах арга.</p>
+        </article>
+        <article class="card">
+          <h3>Media Queries</h3>
+          <p>Дэлгэцийн хэмжээнд тохируулан CSS-ийг автоматаар өөрчлөх техник.</p>
+        </article>
+        <article class="card">
+          <h3>Responsive Navigation</h3>
+          <p>Гар утсан дээр hamburger цэс, компьютер дээр хэвтээ цэс рүү шилждэг навигац.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2 class="section-title">Бидний тухай</h2>
+      <p>Бид анхан шатны суралцагчдад вэб хөгжүүлэлтийн үндсийг ойлгомжтой, дадлагажуулах байдлаар заадаг жижиг багш нарын баг юм.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <p>&copy; 2026 ТСтудио. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+/* =========================================================
+   Лаб 5 — Mobile-First Responsive Design
+   Эхлэл: Mobile (default) → Tablet (600px+) → Desktop (900px+)
+   ========================================================= */
+
+:root {
+  --bg: #f3f6f4;
+  --surface: #ffffff;
+  --ink: #1c2b26;
+  --muted: #5b6b65;
+  --line: #c9d5cf;
+  --accent: #1f6f5c;
+  --accent-dark: #16503f;
+  --accent-ink: #ffffff;
+
+  --font-heading: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;          /* хэвтээ скролл гарахаас сэргийлнэ */
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 700;
+  padding: .75rem 1.5rem;
+  border-radius: 8px;
+}
+
+/* =========================================================
+   HEADER / NAVBAR
+   ========================================================= */
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.navbar {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--accent-dark);
+}
+
+.logo span { color: var(--accent); }
+
+/* ---- Hamburger (зөвхөн Mobile дээр харагдана) ---- */
+
+.nav-toggle { display: none; }
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 25;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: var(--accent-dark);
+  border-radius: 2px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+/* ---- Mobile навигацийн цэс: эхэндээ хаалттай, dropdown ---- */
+
+.nav-menu {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .25s ease;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  padding: 1rem 0 0;
+}
+
+.nav-menu a {
+  display: block;
+  padding: .6rem .25rem;
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+/* Checkbox идэвхжихэд цэс нээгдэнэ (JS хэрэггүй) */
+.nav-toggle:checked ~ .nav-menu {
+  max-height: 400px;
+}
+
+.nav-toggle:checked ~ .hamburger span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.nav-toggle:checked ~ .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle:checked ~ .hamburger span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 2.5rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  line-height: 1.25;
+  color: var(--accent-dark);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 50ch;
+  margin: 0 auto 1.5rem;
+}
+
+/* =========================================================
+   SERVICES / CARD GRID
+   ========================================================= */
+
+.services, .about {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--accent-dark);
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;     /* Mobile: 1 багана */
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  margin-bottom: .5rem;
+  color: var(--accent-dark);
+}
+
+.card p {
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.about p {
+  color: var(--muted);
+  max-width: 65ch;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--muted);
+  font-size: .85rem;
+  border-top: 1px solid var(--line);
+}
+
+/* =========================================================
+   TABLET — min-width: 600px
+   ========================================================= */
+
+@media (min-width: 600px) {
+  .hero h1 { font-size: 2.1rem; }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);  /* Tablet: 2 багана */
+  }
+}
+
+/* =========================================================
+   DESKTOP — min-width: 900px
+   ========================================================= */
+
+@media (min-width: 900px) {
+
+  /* Цэс: hamburger-ийг нуугаад, хэвтээ цэс рүү шилжинэ */
+  .hamburger { display: none; }
+
+  .nav-menu {
+    width: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .nav-menu ul {
+    flex-direction: row;
+    gap: 2rem;
+    padding: 0;
+  }
+
+  .nav-menu a {
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .hero h1 { font-size: 2.6rem; }
+  .hero p { font-size: 1.05rem; }
+
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);  /* Desktop: 3 багана */
+  }
+}
