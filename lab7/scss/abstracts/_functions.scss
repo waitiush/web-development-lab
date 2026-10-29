@@ -1,0 +1,30 @@
+// =========================================================
+// _functions.scss — rem(), contrast()
+// =========================================================
+
+@use "sass:math";
+@use "sass:color";
+
+/// px утгыг rem рүү хөрвүүлнэ (суурь фонт 16px гэж үзнэ)
+/// @param {Number} $px — px нэгжтэй утга
+/// @return {Number} rem нэгжтэй утга
+@function rem($px) {
+  @return math.div($px, 16px) * 1rem;
+}
+
+/// Өгөгдсөн дэвсгэр өнгөнд тохирох хамгийн ялгаатай (хар/цагаан)
+/// текстийн өнгийг relative luminance-ээр тооцож буцаана.
+/// @param {Color} $bg-color
+/// @return {Color} #1c2b26 (бараан) эсвэл #ffffff (цагаан)
+@function contrast($bg-color) {
+  $r: color.channel($bg-color, "red", $space: rgb);
+  $g: color.channel($bg-color, "green", $space: rgb);
+  $b: color.channel($bg-color, "blue", $space: rgb);
+  $luminance: math.div(0.299 * $r + 0.587 * $g + 0.114 * $b, 255);
+
+  @if $luminance > 0.55 {
+    @return #1c2b26;
+  } @else {
+    @return #ffffff;
+  }
+}

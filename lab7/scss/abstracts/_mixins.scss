@@ -1,0 +1,34 @@
+// =========================================================
+// _mixins.scss — respond(), flex-center()
+// =========================================================
+
+@use "sass:map";
+@use "tokens" as t;
+
+/// Mobile-first media query mixin.
+/// @param {String} $bp — t.$breakpoints map-ийн түлхүүр (жишээ нь sm, md)
+@mixin respond($bp) {
+  $value: map.get(t.$breakpoints, $bp);
+
+  @if $value {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Breakpoint `#{$bp}` $breakpoints map-д олдсонгүй.";
+  }
+}
+
+/// Flexbox-оор төвд байрлуулах давтагдсан кодыг нэгтгэнэ.
+/// @param {Number} $gap — элементүүдийн хоорондох зай (default: 0)
+/// @param {String} $direction — flex-direction (default: row)
+@mixin flex-center($gap: 0, $direction: row) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: $direction;
+
+  @if $gap != 0 {
+    gap: $gap;
+  }
+}

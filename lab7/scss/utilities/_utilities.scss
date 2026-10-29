@@ -1,0 +1,29 @@
+// =========================================================
+// _utilities.scss — @each-ээр үүсгэсэн туслах класс
+// =========================================================
+
+@use "../abstracts/tokens" as t;
+@use "../abstracts/functions" as f;
+
+// ---------- Зайны utility: .u-mt-*, .u-mb-*, .u-p-* ----------
+@each $key, $value in t.$spacers {
+  .u-mt-#{$key} { margin-top: $value !important; }
+  .u-mb-#{$key} { margin-bottom: $value !important; }
+  .u-p-#{$key}  { padding: $value !important; }
+  .u-gap-#{$key} { gap: $value !important; }
+}
+
+// ---------- Дэвсгэр өнгөний utility: .u-bg-accent гэх мэт ----------
+// contrast() функцээр тухайн дэвсгэрт тохирсон текстийн өнгийг
+// автоматаар сонгоно (compile-ийн үед тооцоологдоно).
+@each $name, $color in t.$colors {
+  .u-bg-#{$name} {
+    background: var(--color-#{$name}) !important;
+    color: #{f.contrast($color)} !important;
+  }
+}
+
+// ---------- Flex utility ----------
+.u-flex        { display: flex !important; }
+.u-flex-center { display: flex; align-items: center; justify-content: center; }
+.u-hidden      { display: none !important; }

@@ -1,0 +1,33 @@
+// =========================================================
+// _hero.scss — .hero (BEM)
+// =========================================================
+
+@use "../abstracts/tokens" as t;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as f;
+
+.hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 2rem;
+  text-align: center;
+
+  &__title {
+    font-family: t.$font-heading;
+    font-size: f.rem(32px);
+    color: var(--color-accent-dark);
+    margin-bottom: .75rem;
+  }
+
+  &__text {
+    color: var(--color-muted);
+    max-width: 55ch;
+    margin: 0 auto;
+  }
+
+  @include m.respond(md) {
+    &__title {
+      font-size: f.rem(40px);
+    }
+  }
+}

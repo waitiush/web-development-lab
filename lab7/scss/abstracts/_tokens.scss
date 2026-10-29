@@ -1,0 +1,59 @@
+// =========================================================
+// _tokens.scss — өнгө, радиус, breakpoint, зай (design tokens)
+// Бусад partial-ууд эндээс map-аа татаж ашиглана.
+// =========================================================
+
+// ---------- Өнгөний токен (Light theme) ----------
+$colors: (
+  bg: #f3f6f4,
+  surface: #ffffff,
+  ink: #1c2b26,
+  muted: #5b6b65,
+  line: #c9d5cf,
+  accent: #1f6f5c,
+  accent-dark: #16503f,
+  accent-ink: #ffffff,
+  badge: #f2b705,
+);
+
+// ---------- Өнгөний токен (Dark theme дахин тодорхойлолт) ----------
+$colors-dark: (
+  bg: #121a17,
+  surface: #1b2521,
+  ink: #eef2ef,
+  muted: #9fb0aa,
+  line: #2e3b36,
+  accent: #3fae92,
+  accent-dark: #7fd9bf,
+  accent-ink: #0d1412,
+  badge: #f2b705,
+);
+
+// ---------- Радиус токен ----------
+$radius: (
+  sm: 8px,
+  md: 12px,
+  lg: 14px,
+  pill: 999px,
+);
+
+// ---------- Breakpoint токен (mobile-first) ----------
+$breakpoints: (
+  sm: 600px,
+  md: 900px,
+);
+
+// ---------- Зай (spacer) токен — utility класст ашиглана ----------
+$spacers: (
+  0: 0,
+  1: .25rem,
+  2: .5rem,
+  3: .75rem,
+  4: 1rem,
+  5: 1.5rem,
+  6: 2rem,
+);
+
+// ---------- Фонт ----------
+$font-heading: "Space Grotesk", system-ui, sans-serif;
+$font-body: "Manrope", system-ui, sans-serif;

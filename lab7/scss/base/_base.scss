@@ -1,0 +1,63 @@
+// =========================================================
+// _base.scss — reset + :root custom property generation
+// Map-уудаас @each-ээр CSS custom property үүсгэнэ (runtime
+// dark-mode toggle ажиллахын тулд var()-ээр ашиглагдана).
+// =========================================================
+
+@use "../abstracts/tokens" as t;
+
+:root {
+  @each $name, $value in t.$colors {
+    --color-#{$name}: #{$value};
+  }
+  @each $name, $value in t.$radius {
+    --radius-#{$name}: #{$value};
+  }
+
+  --flip-duration: .6s;
+  --stagger-step: 90ms;
+}
+
+[data-theme="dark"] {
+  @each $name, $value in t.$colors-dark {
+    --color-#{$name}: #{$value};
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: t.$font-body;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  line-height: 1.6;
+  transition: background .3s ease, color .3s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.section-title {
+  font-family: t.$font-heading;
+  font-size: 1.4rem;
+  color: var(--color-accent-dark);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}

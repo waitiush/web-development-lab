@@ -1,0 +1,87 @@
+// =========================================================
+// _header.scss — .site-header, .theme-toggle (BEM)
+// =========================================================
+
+@use "../abstracts/tokens" as t;
+@use "../abstracts/mixins" as m;
+@use "../abstracts/functions" as f;
+
+.site-header {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-line);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  transition: background .3s ease, border-color .3s ease;
+
+  &__navbar {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__logo {
+    @include m.flex-center($gap: .5rem);
+    font-family: t.$font-heading;
+    font-weight: 700;
+    font-size: f.rem(18px);
+    color: var(--color-accent-dark);
+
+    span {
+      color: var(--color-accent);
+    }
+  }
+
+  &__logo-icon {
+    color: var(--color-accent);
+  }
+
+  &__nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  &__nav-link {
+    font-weight: 600;
+    font-size: f.rem(14px);
+    color: var(--color-muted);
+    transition: color .15s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-accent);
+    }
+  }
+
+  @include m.respond(sm) {
+    &__navbar {
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+.theme-toggle {
+  @include m.flex-center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-line);
+  background: var(--color-bg);
+  color: var(--color-accent-dark);
+  cursor: pointer;
+  transition: transform .25s ease, background .2s ease;
+
+  &:hover,
+  &:focus-visible {
+    transform: rotate(25deg) scale(1.08);
+    background: var(--color-accent);
+    color: var(--color-accent-ink);
+  }
+}

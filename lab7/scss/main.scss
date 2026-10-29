@@ -1,0 +1,12 @@
+// =========================================================
+// main.scss — бүх partial-уудыг зөв дарааллаар холбоно
+// Build: npm run build  →  css/style.css (compressed)
+// =========================================================
+
+@use "base/base";
+@use "components/header";
+@use "components/hero";
+@use "components/gallery";
+@use "components/media";
+@use "components/footer";
+@use "utilities/utilities";
